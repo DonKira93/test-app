@@ -1,0 +1,9 @@
+=link_to "new book shelf", new_book_shelf_path
+-@book_shelves.each do |book_shelf|
+  %h3=link_to "Book Shelf Desc: #{book_shelf.description}", book_shelf_path(book_shelf)
+  -book_shelf.books.each do |book|
+    %ul
+      %li
+        =link_to "Title: #{book.name}", book_shelf_book_path(book_shelf, book)
+      %li
+        ="Author: #{book.author_name}"

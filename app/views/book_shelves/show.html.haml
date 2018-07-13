@@ -1,0 +1,14 @@
+%h1 Set Books
+%ul
+  -@book_shelf.books.each do |book|
+    %li=book.name
+    %button
+      text
+      -book.remove_book(book, @book_shelf)
+%h1 Unset Books
+%ul
+  -@books.each do |book|
+    %li=link_to book.name, book_shelf_book_path(@book_shelf, book)
+    %button
+      text
+      -book.add_book(book, @book_shelf)
